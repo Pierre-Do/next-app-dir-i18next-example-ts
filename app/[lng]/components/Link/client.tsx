@@ -2,9 +2,10 @@
 
 import { LinkBase } from './LinkBase'
 import { useT } from '../../../i18n/client'
+import {Route} from "next";
 
-export function Link({ href, children }: {
-  href?: string;
+export function Link<T extends string>({ href, children }: {
+  href?: Route<T>;
   children?: React.ReactNode;
 }) {
   const { i18n } = useT()
